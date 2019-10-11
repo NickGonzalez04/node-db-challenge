@@ -5,7 +5,9 @@ module.exports = {
     find,
     add,
     findResource,
-    addResource
+    addResource,
+    findTasks,
+    addTasks
 };
 
 
@@ -23,5 +25,15 @@ function findResource(){
 }
 
 function addResource(resource){
-    return db('resources').insert(resource)
+    return db('resources').insert(resource);
+}
+
+function findTasks(){
+    return db('tasks as t')
+    .join('projects as p', 'p.id', '=', 't.project_id')
+    .select('p.name', 'p.description', 't.Completed');
+}
+
+function addTasks(tasks){
+    return db('tasks').insert(tasks)
 }
