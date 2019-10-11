@@ -29,9 +29,9 @@ function addResource(resource){
 }
 
 function findTasks(){
-    return db('tasks as t')
-    .join('projects as p', 'p.id', '=', 't.project_id')
-    .select('p.name', 'p.description', 't.Completed');
+    return db('tasks')
+    .join('projects', 'projects.id', '=', 'tasks.project_id')
+    .select('projects.name', 'projects.description', 'tasks.Completed');
 }
 
 function addTasks(tasks){
