@@ -1,0 +1,29 @@
+{
+  "name": "node-db-challenge",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.19.5",
+    "sqlite3": "^4.1.0"
+  },
+  "devDependencies": {
+    "node": "^12.11.1",
+    "nodemon": "^1.19.3"
+  },
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickGonzalez04/node-db-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NickGonzalez04/node-db-challenge/issues"
+  },
+  "homepage": "https://github.com/NickGonzalez04/node-db-challenge#readme"
+}
