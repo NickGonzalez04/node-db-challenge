@@ -3,7 +3,9 @@ const db = require('../db-config.js');
 
 module.exports = {
     find,
-    add
+    add,
+    findResource,
+    addResource
 };
 
 
@@ -14,4 +16,12 @@ function find(){
 
 function add(project){
     return db('projects').insert(project)
+}
+
+function findResource(){
+    return db('resources');
+}
+
+function addResource(resource){
+    return db('resources').insert(resource)
 }

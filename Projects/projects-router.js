@@ -29,5 +29,24 @@ router.get('/', (req, res) => {
    });
 });
   
+router.post('/resources', (req, res) => {
+    db.addResource(req.body)
+    .then(resource => {
+        res.status(201).json(resource);
+      })
+    .catch(error => {
+      res.status(500).json({ message: "Failed to store data" }, error);
+    });
+});
+
+router.get('/resources', (req, res) => {
+    db.findResource()
+    .then(resource => {
+        res.status(200).json(resource);
+    })
+   .catch(error => {
+       res.status(500).json({ message: "failed to get projects"}, error);
+   });
+});
 
   module.exports = router;
