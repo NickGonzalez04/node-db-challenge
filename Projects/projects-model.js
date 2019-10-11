@@ -1,17 +1,17 @@
-// const db = require('../db-config.js');
+const db = require('../db-config.js');
 
 
-// module.exports = {
-//     find,
-//     add
-// };
+module.exports = {
+    find,
+    add
+};
 
 
-// function find(){
-//     return db('projects');
-// }
+function find(){
+    return db('projects');
+}
 
 
-// function add(){
-//     return db('projects').insert
-// }
+function add(project){
+    return db('projects').insert(project)
+}

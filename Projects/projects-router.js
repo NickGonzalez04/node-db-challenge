@@ -1,7 +1,7 @@
 const express = require('express');
 
  
-const db = require('../db-config');
+const db = require('../Projects/projects-model');
 
 const router = express.Router();
 
@@ -9,8 +9,7 @@ const router = express.Router();
 
 
 router.post('/', (req, res) => {
-    const projectData = req.body;
-    db('projects').insert(projectData)
+    db.add(req.body)
     .then(project => {
         res.status(201).json(project);
       })
@@ -21,7 +20,7 @@ router.post('/', (req, res) => {
 
 
 router.get('/', (req, res) => {
-    db('projects')
+    db.find()
     .then(project => {
         res.status(200).json(project);
     })
